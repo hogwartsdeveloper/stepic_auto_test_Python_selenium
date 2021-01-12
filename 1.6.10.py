@@ -6,7 +6,7 @@ browser = webdriver.Chrome()
 
 try:
     browser.get('http://suninjuly.github.io/registration1.html')
-    input1 = browser.find_element(By.NAME, "first_name")
+    input1 = browser.find_element(By.CSS_SELECTOR, ".form-control.first")
     input1.send_keys("Zhang")
 
     input2 = browser.find_element(By.NAME, "last_name")
@@ -20,3 +20,6 @@ try:
 
     btn = browser.find_element(By.XPATH, '//button[text() = "Submit"]')
     btn.click()
+finally:
+    time.sleep(10)
+    browser.quit()
